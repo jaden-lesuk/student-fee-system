@@ -13,11 +13,12 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-       Schema::create('reviews', function (Blueprint $table) {
+       Schema::create('fees', function (Blueprint $table) {
            $table->bigIncrements('id');
-           $table->unsignedBigInteger('car_id');
-           $table->foreign('car_id')->references('id')->on('cars');
-           $table->string('body');
+           $table->bigInteger('amount');
+           $table->unsignedBigInteger('student_id');
+           $table->foreign('student_id')->references('id')->on('students');
+           $table->date('registered_on');
            $table->timestamps();
        });
     }
@@ -30,6 +31,6 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('fees');
     }
 }

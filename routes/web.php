@@ -18,11 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/car', 'CarController@allCars');
-Route::get('/review', 'ReviewController@allReviews');
-Route::get('/newcar', 'CarController@index');
-Route::post('/register_car','CarController@newCar');
-Route::post('/register_review','ReviewController@newReview');
-Route::get('/newreview', 'ReviewController@index');
-Route::get('/car/{id}', 'CarController@particularcar');
+Route::get('/student', 'StudentController@allStudents');
+Route::get('/fee', 'FeeController@allFees');
+Route::get('/search', 'FeeController@search');
+Route::get('/newstudent', 'StudentController@index');
+Route::post('/register_student','StudentController@newStudent');
+Route::post('/register_fee','FeeController@newFee');
+Route::get('/newfee', 'FeeController@index');
+Route::get('/student/{id}', 'StudentController@particularstudent');
 //Route::get('/car', 'CarController@newCar');
